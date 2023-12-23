@@ -26,7 +26,7 @@ const AboutSection = () => {
       setIsPending(true);
       try {
         const result = await getData(tab);
-        
+
         setData(result);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -49,17 +49,19 @@ const AboutSection = () => {
           <div className="grid md:grid-cols-4 grid-cols-3 text-pink-300 gap-5">
             {data.map((skill) => (
               <div key={skill._id} className="relative">
-                <div
-                  className=" h-5 w-5 md:h-7 md:w-7 relative group"
-                  style={{ background: `url(${urlFor(skill.image.asset).url()})`, backgroundSize: "cover" }}
-                >
-                  <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818]  bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 ">
-                    <span>{skill.name}</span>
+                {skill.image && (
+                  <div
+                    className="h-5 w-5 md:h-7 md:w-7 relative group"
+                    style={{ background: `url(${urlFor(skill.image.asset).url()})`, backgroundSize: "cover" }}
+                  >
+                    <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 ">
+                      <span>{skill.name}</span>
+                    </div>
                   </div>
-                </div>
-
+                )}
               </div>
             ))}
+
           </div>
 
 
@@ -89,7 +91,14 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/image/p1.jpg" alt="about-section" width={500} height={500} className="rounded-lg" />
+        <img
+          src="/image/p1.jpg"
+          alt="about-section"
+          object="cover"
+          className="rounded-lg h-[600px] w-[550px]"
+        />
+
+
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">

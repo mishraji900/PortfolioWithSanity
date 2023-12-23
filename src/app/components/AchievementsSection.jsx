@@ -75,7 +75,7 @@ const AchievementsSection = () => {
     
   }, []);
 
-  console.log(webDevProjects)
+  
   
   
 
