@@ -95,7 +95,7 @@ const AboutSection = () => {
           src="/image/aboutprofile.jpg"
           alt="about-section"
           object="cover"
-          className="rounded-lg h-[600px] w-[550px]"
+          className="rounded-lg h-[300px] md:w-[400px] lg:h-[600px] lg:w-[500px]"
         />
 
 
