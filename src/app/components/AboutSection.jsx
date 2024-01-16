@@ -79,7 +79,7 @@ const AboutSection = () => {
         return (
           <ul className="list-disc text-pink-300 pl-2">
             {data.map((cert) => (
-              <li key={cert._id}>{cert.name},{cert.description}</li>
+              <a href={cert.previewUrl}><li key={cert._id}>{cert.name},{cert.description}</li></a>
             ))}
           </ul>
         );
