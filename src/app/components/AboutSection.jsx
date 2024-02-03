@@ -46,7 +46,7 @@ const AboutSection = () => {
     switch (tab) {
       case 'skills':
         return (
-          <div className="grid md:grid-cols-4 grid-cols-3 text-pink-300 gap-5">
+          <div className="grid md:grid-cols-4 grid-cols-3 text-pink-300 gap-5" id='about'>
             {data.map((skill) => (
               <div key={skill._id} className="relative">
                 {skill.image && (
